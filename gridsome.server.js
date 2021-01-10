@@ -13,7 +13,7 @@ module.exports = function (api) {
     const project = addCollection('Project')
 
     // 文章列表
-    const journalData = await axios.get('http://localhost:8080/data/journal/index.json')
+    const journalData = await axios.get('http://api.laihui.art/gridsome/journal/index.json')
     for (const item of journalData.data) {
       journal.addNode({
         id: item.id,
@@ -26,7 +26,7 @@ module.exports = function (api) {
     }
 
     // project列表
-    const projectData = await axios.get('http://localhost:8080/data/projects/index.json')
+    const projectData = await axios.get('http://api.laihui.art/gridsome/projects/index.json')
     for (const item of projectData.data) {
       project.addNode({
         title: item.title,
